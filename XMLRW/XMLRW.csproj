@@ -62,7 +62,6 @@
     <Compile Include="FrmUserManage.Designer.cs">
       <DependentUpon>FrmUserManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="XmlSerialization.cs" />
     <EmbeddedResource Include="FrmUserManage.resx">
       <DependentUpon>FrmUserManage.cs</DependentUpon>
     </EmbeddedResource>

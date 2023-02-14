@@ -49,7 +49,6 @@ namespace XMLRW
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmUserManage";
             this.Text = "UserManage";
-            this.Load += new System.EventHandler(this.FrmUserManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
