@@ -14,38 +14,48 @@ namespace XMLRW
 {
     public partial class LoginForm : Form
     {
+        UserHelper userHelper= new UserHelper ("");
+        List<User> users= new List<User>();
+
         public LoginForm()
         {
             InitializeComponent();
+            userHelper.CheckSupperUser("users.rog",users);
+            cbxLevel.DataSource = Enum.GetValues(typeof(Authority));
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-          
+
 
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+  
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            #region 注册用户
-            /*            User user = new User()
-                        {
-                            Username = txtBoxName.Text,
-                            Password = txtBoxPWD.Text
-                        };
-                        XmlSerializer serializer = new XmlSerializer(typeof(User));
-                        using (StreamWriter streamWriter = new StreamWriter("users.xml"))
-                        {
-                            serializer.Serialize(streamWriter, user);
-                        }
+         
+            users= userHelper.DeSerializedUser("users.rog");
+            bool loginSuccess = false;
+            foreach (var user in users)
+            {
+                if (user.Username== txtBoxName.Text&&user.Password== txtBoxPWD.Text)
+                {
+                    loginSuccess = true;//// 如果用户名和密码匹配，则更改登录状态为成功
+                    break;// 结束循环
+                }
+            }
+            if (loginSuccess)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("密码或者用户名错误！");
+            }
 
-                        MessageBox.Show("User registered successfully!");*/
-            #endregion 注册用户
-
-            Form formUserManage = new FrmUserManage();
-
-            formUserManage.Show();
         }
     }
 }

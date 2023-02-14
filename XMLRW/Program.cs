@@ -13,12 +13,22 @@ namespace XMLRW
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
+        
+        
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            if (loginForm.DialogResult==DialogResult.OK)
+            {
+                Application.Run(new FrmUserManage());
+
+            }
+            
+            
 
   
            
