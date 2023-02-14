@@ -31,7 +31,7 @@ namespace XMLRW
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnUserSave = new System.Windows.Forms.Button();
+            this.btnRefashDGV = new System.Windows.Forms.Button();
             this.btnUserCancel = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -49,16 +49,16 @@ namespace XMLRW
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             // 
-            // btnUserSave
+            // btnRefashDGV
             // 
-            this.btnUserSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnUserSave.Location = new System.Drawing.Point(668, 88);
-            this.btnUserSave.Name = "btnUserSave";
-            this.btnUserSave.Size = new System.Drawing.Size(102, 34);
-            this.btnUserSave.TabIndex = 1;
-            this.btnUserSave.Text = "保存";
-            this.btnUserSave.UseVisualStyleBackColor = true;
-            this.btnUserSave.Click += new System.EventHandler(this.btnUserSave_Click);
+            this.btnRefashDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.btnRefashDGV.Location = new System.Drawing.Point(668, 88);
+            this.btnRefashDGV.Name = "btnRefashDGV";
+            this.btnRefashDGV.Size = new System.Drawing.Size(102, 34);
+            this.btnRefashDGV.TabIndex = 1;
+            this.btnRefashDGV.Text = "刷新";
+            this.btnRefashDGV.UseVisualStyleBackColor = true;
+            this.btnRefashDGV.Click += new System.EventHandler(this.btnRefashDGV_Click);
             // 
             // btnUserCancel
             // 
@@ -69,6 +69,7 @@ namespace XMLRW
             this.btnUserCancel.TabIndex = 1;
             this.btnUserCancel.Text = "取消";
             this.btnUserCancel.UseVisualStyleBackColor = true;
+            this.btnUserCancel.Click += new System.EventHandler(this.btnUserCancel_Click);
             // 
             // btnAddUser
             // 
@@ -79,18 +80,19 @@ namespace XMLRW
             this.btnAddUser.TabIndex = 1;
             this.btnAddUser.Text = "添加用户";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -101,10 +103,11 @@ namespace XMLRW
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnUserCancel);
             this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.btnUserSave);
+            this.Controls.Add(this.btnRefashDGV);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmUserManage";
             this.Text = "UserManage";
+            this.Load += new System.EventHandler(this.FrmUserManage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -114,7 +117,7 @@ namespace XMLRW
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnUserSave;
+        private System.Windows.Forms.Button btnRefashDGV;
         private System.Windows.Forms.Button btnUserCancel;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

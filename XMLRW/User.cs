@@ -35,18 +35,18 @@ namespace XMLRW
         /// 序列化文件
         /// </summary>
         /// <param name="path"></param>
-        /// <param name="listUser"></param>
+        /// <param name="users"></param>
         /// <returns></returns>
-        public bool SerializeUser(string path,List<User> listUser)
+        public bool SerializeUser(string path,List<User> users)
         {
-            if (listUser==null)
+            if (users==null)
             {
                 return false;
             }
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write))
             {
-                formatter.Serialize(fs, listUser);
+                formatter.Serialize(fs, users);
                 return true;
             }
         }
@@ -75,7 +75,7 @@ namespace XMLRW
         }
 
 
-        public void CheckSupperUser(string path,List<User> listUser)
+        public void CheckSupperUser(string path,List<User> users)
         {
             if (!File.Exists(path))
             {
@@ -87,8 +87,8 @@ namespace XMLRW
                     Level = Authority.admin
 
                 };
-                listUser.Add(user);
-                SerializeUser(path, listUser);
+                users.Add(user);
+                SerializeUser(path, users);
 
             }
         }

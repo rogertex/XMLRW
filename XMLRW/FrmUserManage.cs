@@ -10,22 +10,26 @@ using System.Windows.Forms;
 
 namespace XMLRW
 {
+    public delegate void ItemEventHandler();
     public partial class FrmUserManage : Form
     {
-        UserHelper userHelper= new UserHelper ("");
+        
+        public event ItemEventHandler ItemEvent;
+
+        UserHelper userHelper = new UserHelper("");
         List<User> users = new List<User>();
         DataTable userDataTable;
         public FrmUserManage()
         {
             InitializeComponent();
             userHelper.CheckSupperUser("users.rog", users);
-            LoadUsers(); 
-            
+            LoadUsers();
+
         }
 
-        private void LoadUsers()
+        public void LoadUsers()
         {
-           userDataTable = new DataTable();
+            userDataTable = new DataTable();
             userDataTable.Columns.Add("Index", typeof(int));
             userDataTable.Columns.Add("Username", typeof(string));
             userDataTable.Columns.Add("Password", typeof(string));
@@ -35,9 +39,10 @@ namespace XMLRW
             foreach (var user in users)
             {
                 userDataTable.Rows.Add(user.Index, user.Username, user.Password, user.Level);
+
             }
             dataGridView1.DataSource = userDataTable;
-            
+
         }
 
         private void btnUserSave_Click(object sender, EventArgs e)
@@ -51,7 +56,7 @@ namespace XMLRW
                 user.Level = (Authority)(dataGridView1.Rows[i].Cells["Level"].Value);
                 users.Add(user);
             }
-            userHelper.SerializeUser("users.rog",users);
+            userHelper.SerializeUser("users.rog", users);
 
         }
 
@@ -77,6 +82,18 @@ namespace XMLRW
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
+                    users = userHelper.DeSerializedUser("users.rog");
+                    foreach (var user in users)
+                    {
+                        if (user.Index == dataGridView1.SelectedRows[0].Index)
+                        {
+                            users.Remove(user);
+                            break;
+                        }
+
+                    }
+                    userHelper.SerializeUser("users.rog", users);
+
                     dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
                 }
 
@@ -84,10 +101,35 @@ namespace XMLRW
             catch (Exception ex)
             {
 
-               MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
-          
+
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            Form frmAddUser = new FrmAddUser();
+            
+            frmAddUser.ShowDialog();
+        }
+
+        private void btnUserCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefashDGV_Click(object sender, EventArgs e)
+        {
+            LoadUsers();
+        }
+
+        private void FrmUserManage_Load(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[0].DefaultCellStyle.BackColor = Color.Yellow;
+            
+
         }
     }
 }

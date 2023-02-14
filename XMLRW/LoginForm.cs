@@ -21,7 +21,7 @@ namespace XMLRW
         {
             InitializeComponent();
             userHelper.CheckSupperUser("users.rog",users);
-            cbxLevel.DataSource = Enum.GetValues(typeof(Authority));
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
