@@ -39,10 +39,9 @@ namespace XMLRW
             // 
             // btnExitApp
             // 
-            this.btnExitApp.Location = new System.Drawing.Point(188, 142);
-            this.btnExitApp.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnExitApp.Location = new System.Drawing.Point(251, 164);
             this.btnExitApp.Name = "btnExitApp";
-            this.btnExitApp.Size = new System.Drawing.Size(76, 20);
+            this.btnExitApp.Size = new System.Drawing.Size(101, 23);
             this.btnExitApp.TabIndex = 4;
             this.btnExitApp.Text = "退出";
             this.btnExitApp.UseVisualStyleBackColor = true;
@@ -50,10 +49,9 @@ namespace XMLRW
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(83, 142);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnLogin.Location = new System.Drawing.Point(111, 164);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(56, 20);
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -61,51 +59,50 @@ namespace XMLRW
             // 
             // txtBoxPWD
             // 
-            this.txtBoxPWD.Location = new System.Drawing.Point(143, 91);
-            this.txtBoxPWD.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtBoxPWD.Location = new System.Drawing.Point(191, 105);
             this.txtBoxPWD.Name = "txtBoxPWD";
-            this.txtBoxPWD.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxPWD.PasswordChar = '*';
+            this.txtBoxPWD.Size = new System.Drawing.Size(160, 25);
             this.txtBoxPWD.TabIndex = 1;
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(143, 54);
-            this.txtBoxName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtBoxName.Location = new System.Drawing.Point(191, 62);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxName.Size = new System.Drawing.Size(160, 25);
             this.txtBoxName.TabIndex = 0;
+            this.txtBoxName.Text = "Admin";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 94);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(107, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "密码：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(107, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "登录：";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 254);
+            this.ClientSize = new System.Drawing.Size(468, 293);
             this.Controls.Add(this.btnExitApp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtBoxPWD);
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "LoginForm";
             this.Text = "登录";
             this.ResumeLayout(false);

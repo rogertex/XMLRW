@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace XMLRW
 {
-    public delegate void ItemEventHandler();
+    
     public partial class FrmUserManage : Form
     {
         
-        public event ItemEventHandler ItemEvent;
+        
 
         UserHelper userHelper = new UserHelper("");
         List<User> users = new List<User>();
@@ -109,8 +109,8 @@ namespace XMLRW
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            Form frmAddUser = new FrmAddUser();
-            
+            FrmAddUser frmAddUser = new FrmAddUser();
+            frmAddUser.ItemEvent += new Action(LoadUsers); //注册事件刷新users datagridview
             frmAddUser.ShowDialog();
         }
 
