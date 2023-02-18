@@ -20,19 +20,22 @@ namespace XMLRW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            LoginForm loginForm = new LoginForm(); 
-            loginForm.ShowDialog();
-            if (loginForm.DialogResult==DialogResult.OK) //登录窗口登录成功后打开主窗口
+
+            //LoginForm loginForm = new LoginForm(); 
+            //loginForm.ShowDialog();
+            //if (loginForm.DialogResult==DialogResult.OK) //登录窗口登录成功后打开主窗口
+            //{
+            //    Application.Run(new Curves()); //打开主窗口
+
+            //}
+
             {
                 Application.Run(new Curves()); //打开主窗口
 
             }
-            
-            
 
-  
-           
+
+
 
         }
     }

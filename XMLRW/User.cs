@@ -21,7 +21,11 @@ namespace XMLRW
         admin,
         eng,
         op,
+        empty,
     }
+
+  
+
 
     public class UserHelper
     {
@@ -93,7 +97,26 @@ namespace XMLRW
             }
         }
 
-        
+        public User CheckUserLogin(string path,string userName,string password)
+        {
+            if (!File.Exists(path)) return null;
+            List<User> users = DeSerializedUser(path);
+            var res = from item in users
+                      where item.Username == userName && item.Password == password
+                      select item;
+            if (res.Count()==0) return null;
+            User user = new User();
+            foreach (var item in res)
+            {
+                user.Username = item.Username;
+                user.Password = item.Password;
+                user.Level = item.Level;
+
+            }
+            return user;
+     
+        }
+
     }
     
 }

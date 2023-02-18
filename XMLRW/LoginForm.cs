@@ -12,10 +12,12 @@ using System.Xml.Serialization;
 
 namespace XMLRW
 {
+    public delegate void LoginInfoTransmit(User user);
     public partial class LoginForm : Form
     {
         UserHelper userHelper= new UserHelper ("");
         List<User> users= new List<User>();
+        public event LoginInfoTransmit login;
 
         public LoginForm()
         {
@@ -34,28 +36,27 @@ namespace XMLRW
   
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-         
-            users= userHelper.DeSerializedUser("users.rog");
-            bool loginSuccess = false;
-            foreach (var user in users)
+        {       
+            User user = null;
+            user=userHelper.CheckUserLogin("users.rog",txtBoxName.Text,txtBoxPWD.Text);
+            if (user!=null)
             {
-                if (user.Username== txtBoxName.Text&&user.Password== txtBoxPWD.Text)
-                {
-                    loginSuccess = true;//// 如果用户名和密码匹配，则更改登录状态为成功
-                    break;// 结束循环
-                }
-            }
-            if (loginSuccess)
-            {
-                this.DialogResult = DialogResult.OK;
+                
+                login(user);
+                CurrentInfo.btnLogin = "退出登录";
                 this.Close();
+
             }
             else
             {
                 MessageBox.Show("密码或者用户名错误！");
             }
 
+        }
+
+        private void btnExitApp_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

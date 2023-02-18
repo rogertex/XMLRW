@@ -39,19 +39,19 @@ namespace XMLRW
             // 
             // btnExitApp
             // 
-            this.btnExitApp.Location = new System.Drawing.Point(251, 175);
+            this.btnExitApp.Location = new System.Drawing.Point(251, 164);
             this.btnExitApp.Name = "btnExitApp";
-            this.btnExitApp.Size = new System.Drawing.Size(101, 25);
+            this.btnExitApp.Size = new System.Drawing.Size(101, 23);
             this.btnExitApp.TabIndex = 3;
-            this.btnExitApp.Text = "退出";
+            this.btnExitApp.Text = "取消";
             this.btnExitApp.UseVisualStyleBackColor = true;
-            this.btnExitApp.Click += new System.EventHandler(this.button2_Click);
+            this.btnExitApp.Click += new System.EventHandler(this.btnExitApp_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(111, 175);
+            this.btnLogin.Location = new System.Drawing.Point(111, 164);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 25);
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -59,44 +59,44 @@ namespace XMLRW
             // 
             // txtBoxPWD
             // 
-            this.txtBoxPWD.Location = new System.Drawing.Point(191, 112);
+            this.txtBoxPWD.Location = new System.Drawing.Point(191, 105);
             this.txtBoxPWD.Name = "txtBoxPWD";
             this.txtBoxPWD.PasswordChar = '*';
-            this.txtBoxPWD.Size = new System.Drawing.Size(160, 20);
+            this.txtBoxPWD.Size = new System.Drawing.Size(160, 25);
             this.txtBoxPWD.TabIndex = 1;
             this.txtBoxPWD.Text = "Admin";
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(191, 66);
+            this.txtBoxName.Location = new System.Drawing.Point(191, 62);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(160, 20);
+            this.txtBoxName.Size = new System.Drawing.Size(160, 25);
             this.txtBoxName.TabIndex = 0;
             this.txtBoxName.Text = "Admin";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 115);
+            this.label2.Location = new System.Drawing.Point(107, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "密码：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 66);
+            this.label1.Location = new System.Drawing.Point(107, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "登录：";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 313);
+            this.ClientSize = new System.Drawing.Size(468, 293);
             this.Controls.Add(this.btnExitApp);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtBoxPWD);

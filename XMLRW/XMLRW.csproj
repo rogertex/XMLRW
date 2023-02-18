@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentInfo.cs" />
     <Compile Include="Curves.cs">
       <SubType>Form</SubType>
     </Compile>
