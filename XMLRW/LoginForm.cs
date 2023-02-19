@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,9 +55,44 @@ namespace XMLRW
 
         }
 
+        /// <summary>
+        /// 查找主窗体是否打开
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        //private bool IsFormOpen<T>() where T : Form
+        //{
+        //    foreach (Form f in Application.OpenForms)
+        //    {
+        //        if (f.GetType() == typeof(T))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+
+
+       
         private void btnExitApp_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is FrmCurves frmCurves)
+                {
+                    if (frmCurves.Visible==false)
+                    {
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                    break;
+                }
+            }
+
         }
     }
 }

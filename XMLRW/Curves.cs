@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace XMLRW
 {
    
-    public partial class Curves : Form
+    public partial class FrmCurves : Form
     {
         private List<double> curve1 = new List<double>();
 
@@ -24,7 +24,7 @@ namespace XMLRW
        
         
 
-        public Curves()
+        public FrmCurves()
         {
             InitializeComponent();
             formsPlot1.Plot.XLabel("时间");
@@ -32,7 +32,7 @@ namespace XMLRW
             formsPlot1.Plot.Title("温度");
             formsPlot1.Plot.XAxis.DateTimeFormat(true);
 
-            System.Timers.Timer timerDT = new System.Timers.Timer(500); //时间显示多线程时钟
+            System.Timers.Timer timerDT = new System.Timers.Timer(1000); //时间显示多线程时钟
             timerDT.Elapsed += UpdateDateTime;
             timerDT.Enabled = true;
 
@@ -46,6 +46,14 @@ namespace XMLRW
             {
                 lblDateTime.Text = DateTime.Now.ToString();
                 btnLogin.Text = CurrentInfo.btnLogin;
+                if (CurrentInfo.loginOut)
+                {
+                    btnUserManger.Enabled = false;
+                }
+                else
+                {
+                    btnUserManger.Enabled = true;
+                }
 
 
             }));
@@ -104,12 +112,13 @@ namespace XMLRW
 
         public void Login(User user)
         {
-            this.Show(); //把隐藏的主界面显示
+            this.Visible=true; //把隐藏的主界面显示
 
             lblUserName.Text = user.Username;
             CurrentInfo.authority = user.Level;
-            CurrentInfo.LoginOut = false;
-            UserTimeOut(30);
+            CurrentInfo.loginOut = false;
+            CurrentInfo.btnLogin = "退出登录";
+            UserTimeOut(10);
 
 
         }
@@ -129,7 +138,7 @@ namespace XMLRW
                     {
                         i = 0;
                     }
-                    if (CurrentInfo.LoginOut) break;
+                    if (CurrentInfo.loginOut) break;
                   
                 }
                 LoginOut();
@@ -159,7 +168,7 @@ namespace XMLRW
             else
             {
                 LoginOut();
-                CurrentInfo.btnLogin = "用户登录";
+               
             }
 
            
@@ -168,8 +177,13 @@ namespace XMLRW
         private void LoginOut()
         {
            CurrentInfo.authority=Authority.empty;
-            lblUserName.Text = "No User";
-            CurrentInfo.LoginOut=true;
+            lblUserName.Invoke(new Action(() =>
+            {
+                lblUserName.Text = "No User";
+
+            }));
+            CurrentInfo.loginOut=true;
+            CurrentInfo.btnLogin = "用户登录";
         }
     }
 }

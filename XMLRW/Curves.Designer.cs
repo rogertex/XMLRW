@@ -1,7 +1,7 @@
 ﻿
 namespace XMLRW
 {
-    partial class Curves
+    partial class FrmCurves
     {
         /// <summary>
         /// Required designer variable.
@@ -140,7 +140,7 @@ namespace XMLRW
             this.lblDateTime.TabIndex = 6;
             this.lblDateTime.Text = "label2";
             // 
-            // Curves
+            // FrmCurves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,9 +150,9 @@ namespace XMLRW
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.splitter1);
-            this.Name = "Curves";
+            this.Name = "FrmCurves";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Curves";
+            this.Text = "FrmCurves";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Curves_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

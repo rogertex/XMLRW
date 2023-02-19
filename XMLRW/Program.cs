@@ -30,7 +30,7 @@ namespace XMLRW
             //}
 
             {
-                Application.Run(new Curves()); //打开主窗口
+                Application.Run(new FrmCurves()); //打开主窗口
 
             }
 
