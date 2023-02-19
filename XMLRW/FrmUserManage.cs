@@ -7,15 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace XMLRW
 {
     
-    public partial class FrmUserManage : Form
+    public partial class FrmUserManage : MetroForm
     {
-        
-        
-
         UserHelper userHelper = new UserHelper("");
         List<User> users = new List<User>();
         DataTable userDataTable;

@@ -10,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using MetroFramework.Forms;
 
 namespace XMLRW
 {
     public delegate void LoginInfoTransmit(User user);
-    public partial class LoginForm : Form
+    public partial class LoginForm : MetroForm
     {
         UserHelper userHelper= new UserHelper ("");
         List<User> users= new List<User>();

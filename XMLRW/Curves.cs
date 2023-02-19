@@ -6,11 +6,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace XMLRW
 {
    
-    public partial class FrmCurves : Form
+    public partial class FrmCurves : MetroForm
     {
         private List<double> curve1 = new List<double>();
 
@@ -184,6 +185,11 @@ namespace XMLRW
             }));
             CurrentInfo.loginOut=true;
             CurrentInfo.btnLogin = "用户登录";
+        }
+
+        private void btnAppExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
