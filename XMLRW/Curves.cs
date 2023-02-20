@@ -6,12 +6,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
-using MetroFramework.Forms;
 
 namespace XMLRW
 {
    
-    public partial class FrmCurves : MetroForm
+    public partial class FrmCurves : Form
     {
         private List<double> curve1 = new List<double>();
 
@@ -43,30 +42,23 @@ namespace XMLRW
 
         private void UpdateDateTime(object sender, ElapsedEventArgs e)
         {
-            this.Invoke(new Action(() =>
+            this.BeginInvoke(new Action(() =>
             {
                 lblDateTime.Text = DateTime.Now.ToString();
-                btnLogin.Text = CurrentInfo.btnLogin;
-                if (CurrentInfo.loginOut)
-                {
-                    btnUserManger.Enabled = false;
-                }
-                else
-                {
-                    btnUserManger.Enabled = true;
-                }
+
+
 
 
             }));
 
-            
+
         }
 
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Task.Run(() =>
+           Task task1= Task.Run(() =>
             {
                 while (true)
                 {
@@ -80,11 +72,11 @@ namespace XMLRW
                     formsPlot1.Plot.AddSignalXY(dateTime.ToArray(), curve3.ToArray(), System.Drawing.Color.DodgerBlue, "pressure3");
                     this.Invoke(new Action(() =>
                     {
-                        formsPlot1.Render();
+                        formsPlot1.Refresh();
 
                     }));
                     Thread.Sleep(1000);
-
+                   
 
                 }
 
@@ -119,6 +111,17 @@ namespace XMLRW
             CurrentInfo.authority = user.Level;
             CurrentInfo.loginOut = false;
             CurrentInfo.btnLogin = "退出登录";
+
+            if (CurrentInfo.loginOut)
+            {
+                btnUserManger.Enabled = false;
+            }
+            else
+            {
+                btnUserManger.Enabled = true;
+            }
+            btnLogin.Text = CurrentInfo.btnLogin;
+
             UserTimeOut(10);
 
 
@@ -128,7 +131,8 @@ namespace XMLRW
         public static extern bool GetCursorPos(out Point pt);
         private void UserTimeOut(int secTime)
         {
-            Task.Run(() =>
+            
+          Task task2=Task.Run(() =>
             {
                 for (int i = 0; i < secTime; i++)
                 {
@@ -185,6 +189,15 @@ namespace XMLRW
             }));
             CurrentInfo.loginOut=true;
             CurrentInfo.btnLogin = "用户登录";
+            if (CurrentInfo.loginOut)
+            {
+                btnUserManger.Enabled = false;
+            }
+            else
+            {
+                btnUserManger.Enabled = true;
+            }
+            btnLogin.Text = CurrentInfo.btnLogin;
         }
 
         private void btnAppExit_Click(object sender, EventArgs e)

@@ -1,12 +1,12 @@
-﻿using MetroFramework.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace XMLRW
 {
 
 
-    public partial class FrmAddUser :MetroForm
+    public partial class FrmAddUser : Form
     {
         public event Action ItemEvent; //定义事件用于刷新users datagridview
         UserHelper userHelper = new UserHelper("");

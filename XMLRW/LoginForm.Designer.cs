@@ -112,7 +112,6 @@ namespace XMLRW
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
             this.Padding = new System.Windows.Forms.Padding(15, 48, 15, 16);
-            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.ResumeLayout(false);
             this.PerformLayout();
 

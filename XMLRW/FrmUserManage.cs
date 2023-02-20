@@ -7,12 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Forms;
 
 namespace XMLRW
 {
     
-    public partial class FrmUserManage : MetroForm
+    public partial class FrmUserManage : Form
     {
         UserHelper userHelper = new UserHelper("");
         List<User> users = new List<User>();
@@ -109,7 +108,6 @@ namespace XMLRW
         {
             FrmAddUser frmAddUser = new FrmAddUser();
             frmAddUser.ItemEvent += new Action(LoadUsers); //注册事件刷新users datagridview
-            frmAddUser.ShowDialog();
         }
 
         private void btnUserCancel_Click(object sender, EventArgs e)

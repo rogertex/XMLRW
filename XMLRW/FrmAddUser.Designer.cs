@@ -37,7 +37,6 @@ namespace XMLRW
             this.lblAuthority = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
             // 
             // cbxLevel
             // 
@@ -117,21 +116,7 @@ namespace XMLRW
             // 
             // FrmAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 237);
-            this.Controls.Add(this.cbxLevel);
-            this.Controls.Add(this.btnExitApp);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtBoxPWD);
-            this.Controls.Add(this.txtBoxName);
-            this.Controls.Add(this.lblAuthority);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "FrmAddUser";
-            this.Text = "FrmAddUser";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+
 
         }
 

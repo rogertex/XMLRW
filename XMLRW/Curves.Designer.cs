@@ -35,20 +35,18 @@ namespace XMLRW
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblDateTime = new System.Windows.Forms.Label();
-            this.formsPlot1 = new ScottPlot.FormsPlot();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.btnAppExit = new System.Windows.Forms.Button();
+            this.formsPlot1 = new ScottPlot.FormsPlot();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCurve
             // 
             this.btnCurve.Location = new System.Drawing.Point(30, 20);
-            this.btnCurve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCurve.Margin = new System.Windows.Forms.Padding(2);
             this.btnCurve.Name = "btnCurve";
             this.btnCurve.Size = new System.Drawing.Size(160, 43);
             this.btnCurve.TabIndex = 1;
@@ -59,7 +57,7 @@ namespace XMLRW
             // btnUserManger
             // 
             this.btnUserManger.Location = new System.Drawing.Point(30, 81);
-            this.btnUserManger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUserManger.Margin = new System.Windows.Forms.Padding(2);
             this.btnUserManger.Name = "btnUserManger";
             this.btnUserManger.Size = new System.Drawing.Size(160, 43);
             this.btnUserManger.TabIndex = 1;
@@ -92,7 +90,7 @@ namespace XMLRW
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(30, 136);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(160, 43);
             this.btnLogin.TabIndex = 1;
@@ -110,14 +108,6 @@ namespace XMLRW
             this.lblDateTime.Size = new System.Drawing.Size(55, 15);
             this.lblDateTime.TabIndex = 6;
             this.lblDateTime.Text = "label2";
-            // 
-            // formsPlot1
-            // 
-            this.formsPlot1.Location = new System.Drawing.Point(279, 0);
-            this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(983, 722);
-            this.formsPlot1.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -138,23 +128,8 @@ namespace XMLRW
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 730);
+            this.panel1.Size = new System.Drawing.Size(233, 665);
             this.panel1.TabIndex = 8;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Controls.Add(this.formsPlot1);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 80);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(1396, 730);
-            this.metroPanel1.TabIndex = 9;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
             // btnAppExit
             // 
@@ -167,27 +142,33 @@ namespace XMLRW
             this.btnAppExit.UseVisualStyleBackColor = true;
             this.btnAppExit.Click += new System.EventHandler(this.btnAppExit_Click);
             // 
+            // formsPlot1
+            // 
+            this.formsPlot1.Location = new System.Drawing.Point(275, 68);
+            this.formsPlot1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.formsPlot1.Name = "formsPlot1";
+            this.formsPlot1.Size = new System.Drawing.Size(742, 630);
+            this.formsPlot1.TabIndex = 9;
+            // 
             // FrmCurves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 826);
+            this.ClientSize = new System.Drawing.Size(1426, 761);
+            this.Controls.Add(this.formsPlot1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.metroPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCurves";
             this.Padding = new System.Windows.Forms.Padding(0, 80, 30, 16);
-            this.Style = MetroFramework.MetroColorStyle.Silver;
-            this.Text = "           DAQ for LockRotor";
+            this.Text = "DAQ for LockRotor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Curves_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,10 +181,9 @@ namespace XMLRW
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Button btnLogin;
-        private ScottPlot.FormsPlot formsPlot1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Button btnAppExit;
+        private ScottPlot.FormsPlot formsPlot1;
     }
 }
